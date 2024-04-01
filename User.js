@@ -32,7 +32,10 @@ const UserSchema = new mongoose.Schema({
     immutable: true,
     default: Date.now(),
   },
-  Freind: mongoose.SchemaTypes.ObjectId,
+  bestFriend: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "User",
+  },
   Skills: [String],
   address: addressSchema,
 });
